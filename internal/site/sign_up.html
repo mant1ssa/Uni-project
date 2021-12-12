@@ -1,0 +1,50 @@
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="main.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NPP sign in</title>
+</head>
+<body>
+    <div class="wrapper">
+        <header id="header" class="header">
+            <div class="container">
+                <div class="logo">
+                    <h1 class="logo-text">Название придумаю потом</h1>
+                </div>
+            </div>
+        </header>
+        <main id="sign" class="sign">
+            <div class="container">
+                <form action="save_user.php" method="post">
+                    <div class="sign-form">
+                        <h2><br>Зарегистрироваться</h2>
+                        <p>Пожалуйста, заполните эту форму, чтобы создать учетную запись.</p>
+                        <hr>
+                        
+                        <label for="login"><b>Login</b></label>
+                        <input type="text" placeholder="Придумайте Логин" name="login" required>
+    
+                        <label for="psw"><b>Password</b></label>
+                        <input type="password" placeholder="Придумайте пароль" name="password" required>
+                        <hr>
+                        <!-- <buttin class="btn" name="submit" formaction = "save_user.php">Зарегестрироваться</buttin> -->
+                        <input type="submit" class="btn" name="submit" value="Зарегестрироваться"> 
+                    </div>
+                    <div class="container signin">
+                        <p>Уже есть аккаунт? <a href="sign_in.html">Войти</a>.</p>
+                    </div>
+                </form>
+            </div>
+        </main>
+        <footer id="footer" class="footer">
+            <div class="container">
+                <p class="footer-text">&copy; Все права защищены. 2021</p>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>

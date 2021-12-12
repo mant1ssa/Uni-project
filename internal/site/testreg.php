@@ -26,17 +26,23 @@ if (empty($login) or empty($password)) //если пользователь не 
     $login = trim($login);
     $password = trim($password);
 // подключаемся к базе
-    //include ("bd.php");// файл bd.php должен быть в той же папке, что и все остальные, если это не так, то просто измените путь 
+    #include ("bd.php");// файл bd.php должен быть в той же папке, что и все остальные, если это не так, то просто измените путь 
  
     $conn = mysqli_connect("localhost", "root", "mysql", "project_npp_db");
-    $result = mysqli_query($conn, "SELECT * FROM users WHERE login='$login'"); //извлекаем из базы все данные о пользователе с введенным логином
+    $result = mysqli_query($conn, "SELECT id, login, password FROM users WHERE login='$login'"); //извлекаем из базы все данные о пользователе с введенным логином
     $myrow = mysqli_fetch_array($result);
-    while($row=mysqli_fetch_array($result)){
-        echo $row['id'],' ', $row['login'],' ', $row['password'],' '. "<br />";
-    }
-    /*
+    //$mytest_query = mysqli_query($conn,"SELECT * FROM `users`");
+    
 
-    $myrow = mysqli_fetch_array($result);
+    //$myrow = mysqli_fetch_array($mytest_query);
+    #while($myrow2 = mysql_fetch_array($mytest_query))
+    ##echo $myrow['login']. '<br>';
+    ##echo $myrow['password']. '<br>';
+
+    ##echo $login.'<br>';
+    ##echo $password.'<br>';
+    
+    //если существует, то сверяем пароли
     if (empty($myrow['password']))
     {
     //если пользователя с введенным логином не существует
@@ -44,16 +50,16 @@ if (empty($login) or empty($password)) //если пользователь не 
     }
     else {
     //если существует, то сверяем пароли
-    if ($myrow['password']==$password) {
+    if (($myrow['password']==$password) && ($myrow['login']==$login)) {
     //если пароли совпадают, то запускаем пользователю сессию! Можете его поздравить, он вошел!
     $_SESSION['login']=$myrow['login']; 
     $_SESSION['id']=$myrow['id'];//эти данные очень часто используются, вот их и будет "носить с собой" вошедший пользователь
-    echo "Вы успешно вошли на сайт! <a href='index.php'>Главная страница</a>";
+    echo "Вы успешно вошли на сайт! <a href='page.php'>Главная страница</a>";
     }
  else {
     //если пароли не сошлись
 
     exit ("Извините, введённый вами login или пароль неверный.");
     }
-    }*/
+}
     ?>

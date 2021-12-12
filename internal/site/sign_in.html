@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="main.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Noname</title>
+</head>
+<body>
+    <div class="wrapper">
+        <header id="header" class="header">
+            <div class="container">
+                <div class="logo">
+                    <h1 class="logo-text">Название придумаю потом</h1>
+                </div>
+            </div>
+        </header>
+        <main id="sign" class="sign">
+            <div class="container">
+                <form action="testreg.php" method="post">
+                    <div class="sign-form">
+                        <h2><br>Войти</h2>
+                        <p>Пожалуйста, заполните эту форму, чтобы войти в учетную запись.</p>
+                        <hr>
+                        
+                        <label for="login"><b>Login</b></label>
+                        <input type="text" placeholder="Enter Login" name="login" required>
+    
+                        <label for="psw"><b>Password</b></label>
+                        <input type="password" placeholder="Enter Password" name="password" required>
+                        <hr>
+                        <input type="submit" class="btn" name="submit" value="Войти">
+                    </div>
+                    <div class="container signin">
+                        <p>Еще нет аккаунта? <a href="sign_up.html">Зарегестрироваться</a>.</p>
+                    </div>
+                </form>
+            </div>
+        </main>
+        <footer id="footer" class="footer">
+            <div class="container">
+                <p class="footer-text">&copy; Все права защищены. 2021</p>
+            </div>
+        </footer>
+    </div>
+    
+</body>
+</html>

@@ -1,11 +1,5 @@
 <?php
-    $conn = mysqli_connect("localhost", "root", "mysql", "project_npp_db");
-    $result = mysqli_query($conn, "SELECT * FROM users WHERE id>0"); //извлекаем из базы все данные о пользователе с введенным логином
-    $myrow = mysqli_fetch_array($result);
-    while($row=mysqli_fetch_array($result)){
-        echo $row['id'],' ', $row['login'],' ', $row['password'],' '. "<br />";
-    }
-    /*
+
     session_start();
     ?>
 
@@ -58,5 +52,5 @@
     }
     ?>
     </body>
-    </html>*/
+    </html>
     ?>
