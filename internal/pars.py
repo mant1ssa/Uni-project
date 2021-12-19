@@ -24,7 +24,7 @@ try:
         my_query = "INSERT INTO goods(category, name, calories, sugar, protein) VALUES (%s, %s, %s, %s, %s)"
 
         with connection.cursor() as cursor:
-          for i in getMenu("C:\menu.csv"):
+          for i in getMenu("menu.csv"):
             val = (i["Category"], i["Item"], i["Calories"], i["Sugars"], i["Protein"])
             cursor.execute(my_query, val)
           connection.commit()
